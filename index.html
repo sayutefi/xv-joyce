@@ -23,7 +23,7 @@ img{display:block;max-width:100%}
 #intro.gone{opacity:0;visibility:hidden}
 .lake{position:relative;width:min(380px,92vw);aspect-ratio:340/254;margin-bottom:6px}
 .moon{position:absolute;left:50%;top:-6%;width:86%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(201,216,236,.5) 0%,rgba(169,198,227,.28) 45%,rgba(169,198,227,.08) 62%,transparent 72%);animation:moonpulse 5s ease-in-out infinite}
-.swan-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 58%,transparent 100%);animation:bob 5s ease-in-out infinite}
+.swan-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 18px rgba(169,198,227,.45));-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);animation:bob 5s ease-in-out infinite}
 @keyframes moonpulse{0%,100%{opacity:.85;scale:1}50%{opacity:1;scale:1.04}}
 .swan-float{position:absolute;left:4%;right:4%;bottom:18%;animation:bob 4.5s ease-in-out infinite;filter:drop-shadow(0 0 16px rgba(169,198,227,.55))}
 .swan-refl{position:absolute;left:4%;right:4%;top:82%;height:40%;overflow:hidden;opacity:.2;transform:scaleY(-1);transform-origin:top;-webkit-mask-image:linear-gradient(0deg,transparent 0%,#000 100%);mask-image:linear-gradient(0deg,transparent 0%,#000 100%)}
@@ -175,7 +175,9 @@ section{position:relative;padding:88px 22px;text-align:center}
 /* Confirmación */
 #confirmar{background:radial-gradient(ellipse at 50% 18%,#2B4270 0%,var(--navy) 55%)}
 .rsvp{position:relative;padding-top:10px}
-.rsvp-swan{position:relative;width:min(300px,78vw);aspect-ratio:340/254;margin:0 auto}
+.rsvp-swan{position:relative;width:min(260px,68vw);aspect-ratio:300/262;margin:0 auto}
+.rsvp-swan::before{content:"";position:absolute;left:50%;top:52%;width:118%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(169,198,227,.35) 0%,rgba(169,198,227,.12) 50%,transparent 70%)}
+.rsvp-swan svg{position:relative;width:100%;height:auto;display:block;animation:float 4s ease-in-out infinite;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
 .rsvp-swan .glow{position:absolute;left:50%;top:58%;width:260px;height:120px;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(169,198,227,.45),transparent 70%);filter:blur(6px)}
 .rsvp-swan svg{position:relative;animation:float 4s ease-in-out infinite}
 .ripple{animation:ripple 4s ease-in-out infinite;transform-origin:center}
@@ -283,6 +285,14 @@ section{position:relative;padding:88px 22px;text-align:center}
 #intro small{margin-top:30px}
 #intro.opened .tap,#intro.opened .hand,#intro.opened small,#intro.opened .env-name,#intro.opened .eyebrow,#intro.opened .env-sub{opacity:0;transition:opacity .6s}
 @media (max-height:700px){.envelope{width:270px;margin-top:30px}.tap{margin-top:30px}#intro small{margin-top:18px}.env-seal{width:80px;height:80px;margin:-40px 0 0 -40px}}
+
+.rsvp-btns{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:34px}
+.rsvp-btns .wa{margin-top:0;min-width:min(300px,100%);justify-content:space-between;font-size:clamp(17px,4.8vw,21px)}
+.wa-no{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;min-width:min(300px,100%);padding:12px 26px;box-sizing:border-box;border-radius:999px;border:1.5px solid rgba(220,230,243,.75);color:#DCE6F3;text-decoration:none;font-size:clamp(14px,4vw,16px);letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.04);transition:background .2s,color .2s}
+.wa-no:hover{background:rgba(220,230,243,.14);color:#fff}
+.wa-no:focus-visible{outline:3px solid var(--sky);outline-offset:4px}
+.wa-no svg{width:20px;height:20px;flex:none}
+.wa-note{font-size:15px;font-style:italic;color:var(--silver);max-width:300px;line-height:1.35}
 
 /* Final */
 .final .big-script{font-size:clamp(54px,13vw,84px)}
@@ -501,7 +511,23 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
   <svg class="side-feather" style="left:5%;bottom:10%;animation-delay:-1s" viewBox="0 0 60 200" aria-hidden="true"><path d="M30 8 C 4 50, 6 120, 30 172 C 54 120, 56 50, 30 8 Z" fill="#DCE6F3"/><path d="M30 10 L30 196" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>
   <div class="wrap rsvp reveal">
     <div class="rsvp-swan">
-      <img class="swan-img" src="img/cisne.jpg" alt="" aria-hidden="true">
+      <svg viewBox="0 0 300 262" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cisne blanco con corona">
+<ellipse cx="160" cy="226" rx="136" ry="27" fill="#3D64A8" stroke="#1E2D63" stroke-width="6"/>
+<path d="M70 222 H120 M150 236 H205 M215 220 H262 M95 240 H130 M58 232 H82" stroke="#8EC5F2" stroke-width="5" stroke-linecap="round"/>
+<path d="M62 46 C 70 26, 112 22, 126 44 C 140 66, 128 94, 110 120 C 96 142, 92 162, 112 176 C 142 190, 202 194, 258 184 C 256 208, 228 220, 190 222 L 92 222 C 62 222, 50 202, 56 182 C 62 152, 80 130, 92 106 C 104 86, 106 74, 96 68 C 86 64, 76 68, 66 64 C 56 60, 56 52, 62 46 Z" fill="#FFFFFF" stroke="#1E2D63" stroke-width="7" stroke-linejoin="round"/>
+<path d="M118 52 C 126 70, 118 92, 102 116 C 88 138, 82 160, 96 180" stroke="#D6E4F5" stroke-width="9" fill="none" stroke-linecap="round"/>
+<path d="M70 210 C 90 216, 140 216, 180 212" stroke="#D6E4F5" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M66 40 L22 68 L64 68 Z" fill="#F2A23A" stroke="#1E2D63" stroke-width="5" stroke-linejoin="round"/>
+<path d="M34 66 L64 68 L64 58 Z" fill="#E0602F"/>
+<path d="M60 44 C 66 46, 68 56, 62 64 C 58 60, 56 50, 60 44 Z" fill="#1E2D63"/>
+<circle cx="84" cy="48" r="6.5" fill="#1E2D63"/><circle cx="86" cy="46" r="2.2" fill="#FFFFFF"/>
+<path d="M118 180 C 140 140, 192 116, 252 94 L 240 116 L 272 108 L 254 132 L 284 128 L 262 152 L 288 154 L 262 174 L 276 186 C 236 206, 162 206, 118 180 Z" fill="#4A78C2" stroke="#1E2D63" stroke-width="6" stroke-linejoin="round"/>
+<path d="M190 196 C 220 194, 248 186, 276 186 L 262 174 L 288 154 L 262 152 C 238 170, 214 182, 190 196 Z" fill="#34589E" stroke="#1E2D63" stroke-width="4" stroke-linejoin="round"/>
+<path d="M134 172 C 160 142, 200 122, 244 104" stroke="#8EC5F2" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M150 182 C 176 160, 210 146, 250 134" stroke="#6FA6E6" stroke-width="5" fill="none" stroke-linecap="round"/>
+<ellipse cx="196" cy="158" rx="9" ry="4.5" transform="rotate(-20 196 158)" fill="#8EC5F2"/>
+<g transform="translate(66 6)"><path d="M2 26 L5 8 L13 17 L20 3 L27 17 L35 8 L38 26 Z" fill="#E9F0F9" stroke="#1E2D63" stroke-width="4" stroke-linejoin="round"/><circle cx="20" cy="3" r="3.2" fill="#8EC5F2" stroke="#1E2D63" stroke-width="2"/><circle cx="12" cy="20" r="2" fill="#8EC5F2"/><circle cx="28" cy="20" r="2" fill="#8EC5F2"/></g>
+</svg>
     </div>
     <p class="rsvp-title-top lined"><span>Confirma</span></p>
     <h2 class="script rsvp-title">tu asistencia</h2>
@@ -523,12 +549,19 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
       <p class="who" id="passWho" hidden></p>
     </div>
 
-    <a class="wa" id="waBtn" href="https://wa.me/529361224982" target="_blank" rel="noopener">
-      <svg class="wa-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 27l1.8-5.4A11 11 0 1 1 11 26z"/><path d="M12 10.5c.4-.9 1.6-1 2-.1l1 2.2c.2.4 0 .9-.3 1.2l-.8.7a8 8 0 0 0 3.6 3.6l.7-.8c.3-.3.8-.5 1.2-.3l2.2 1c.9.4.8 1.6-.1 2-2.5 1.2-5.7-.3-7.7-2.3s-3.5-5.2-1.8-8.2z"/></svg>
-      <span class="sep"></span>
-      <span>Confirmar por<br>WhatsApp</span>
-      <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span>
-    </a>
+    <div class="rsvp-btns">
+      <a class="wa" id="waBtn" href="https://wa.me/529361224982" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 27l1.8-5.4A11 11 0 1 1 11 26z"/><path d="M12 10.5c.4-.9 1.6-1 2-.1l1 2.2c.2.4 0 .9-.3 1.2l-.8.7a8 8 0 0 0 3.6 3.6l.7-.8c.3-.3.8-.5 1.2-.3l2.2 1c.9.4.8 1.6-.1 2-2.5 1.2-5.7-.3-7.7-2.3s-3.5-5.2-1.8-8.2z"/></svg>
+        <span class="sep"></span>
+        <span>Sí, asistiré</span>
+        <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      </a>
+      <a class="wa-no" id="waNo" href="https://wa.me/529361224982" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+        No podré asistir
+      </a>
+      <p class="wa-note">Ambas opciones te llevan a WhatsApp con el mensaje listo para enviar.</p>
+    </div>
 
     <p class="phone lined"><span><svg viewBox="0 0 24 24" fill="none" stroke="#A9C6E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Número: 936 122 4982</span></p>
     <p class="deadline">Confirma a más tardar el 10 de diciembre</p>
@@ -620,6 +653,9 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
   var msg='¡Hola! Confirmo mi asistencia a los XV años de Joyce Marcella el 9 de enero de 2027.'+
           (invitado?' Invitado: '+invitado+'.':'')+' Pase para '+pases+(pases===1?' persona.':' personas.');
   document.getElementById('waBtn').href='https://wa.me/529361224982?text='+encodeURIComponent(msg);
+  var msgNo='Hola, lamentablemente no podré asistir a los XV años de Joyce Marcella el 9 de enero de 2027.'+
+          (invitado?' Invitado: '+invitado+'.':'')+' ¡Muchas felicidades!';
+  document.getElementById('waNo').href='https://wa.me/529361224982?text='+encodeURIComponent(msgNo);
 
   // Cuenta regresiva (17:00 hora del centro de México, UTC-6)
   var target=new Date('2027-01-09T17:00:00-06:00').getTime();
