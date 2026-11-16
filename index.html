@@ -75,8 +75,8 @@ section{position:relative;padding:88px 22px;text-align:center}
 .fx-line:not(.in) i{scale:0 1}
 .fx-line svg{transition:rotate 1.3s ease .2s,scale 1s cubic-bezier(.2,1.6,.4,1) .2s}
 .fx-line:not(.in) svg:not(.cisnito){rotate:-180deg;scale:0}
-.fx-line .cisnito{transition:opacity .9s ease .3s,scale 1s cubic-bezier(.2,1.6,.4,1) .3s}
-.fx-line:not(.in) .cisnito{opacity:0;scale:.3}
+.fx-line .duo-swan{transition:opacity .9s ease .3s,scale 1s cubic-bezier(.2,1.6,.4,1) .3s}
+.fx-line:not(.in) .duo-swan{opacity:0;scale:.3}
 .ch{display:inline-block;white-space:pre;transition:opacity .8s ease,translate .9s cubic-bezier(.2,.8,.2,1.2),rotate .9s ease;transition-delay:calc(var(--d)*60ms + var(--wait,0ms) + 120ms)}
 .fx-letters:not(.in) .ch{opacity:0;translate:0 .55em;rotate:12deg}
 .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:28px auto}
@@ -364,6 +364,16 @@ section{position:relative;padding:88px 22px;text-align:center}
 @keyframes nodePop{0%{scale:.75}100%{scale:1}}
 .fx-right:not(.in){opacity:0;translate:46px 0}
 
+/* Pareja de cisnes */
+.duo-swan{width:46px;height:auto;flex:none;filter:drop-shadow(0 0 8px rgba(169,198,227,.45));animation:bob 4.2s ease-in-out infinite}
+.duo-swan.der{animation-delay:-2.1s}
+.duo-swan.big{width:66px}
+.divider .duo-swan{width:42px}
+.swan-duo{display:flex;align-items:flex-end;justify-content:center;gap:16px;margin:0 auto 14px}
+.swan-duo .duo-swan{width:clamp(64px,19vw,84px)}
+.duo-star{width:14px;height:14px;margin-bottom:22px;flex:none}
+.medal-row .duo-swan{margin-bottom:10px}
+
 /* Final */
 .final .big-script{font-size:clamp(54px,13vw,84px)}
 footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:16px;font-style:italic}
@@ -466,7 +476,7 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
 <section>
   <div class="wrap reveal">
     <p class="lead">Con la bendición de Dios y el amor de mis padres</p>
-    <div class="divider"><i></i><svg class="cisnito r" aria-hidden="true"><use href="#cisnito"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L13 7 L20 10 L13 13 L10 20 L7 13 L0 10 L7 7 Z" fill="#C9CED6"/></svg><svg class="cisnito" aria-hidden="true"><use href="#cisnito"/></svg><i></i></div>
+    <div class="divider"><i></i><img class="duo-swan izq" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L13 7 L20 10 L13 13 L10 20 L7 13 L0 10 L7 7 Z" fill="#C9CED6"/></svg><img class="duo-swan der" src="img/cisne-der.png" alt="" aria-hidden="true"><i></i></div>
     <div class="parents">
       <p>Sr. José Natividad Baeza Javier</p>
       <p class="script y">y</p>
@@ -484,6 +494,7 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
   <div class="ribbon-slot" data-pos="tl"></div>
   <div class="sparkle-slot" data-n="9"></div>
   <div class="wrap reveal">
+    <div class="swan-duo"><img class="duo-swan izq" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg class="duo-star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#DCE6F3"/></svg><img class="duo-swan der" src="img/cisne-der.png" alt="" aria-hidden="true"></div>
     <p class="eyebrow">Guarda la fecha</p>
     <h2 class="script big-script">Enero 2027</h2>
     <div class="cal" role="img" aria-label="Calendario de enero de 2027 con el sábado 9 marcado">
@@ -500,6 +511,7 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
 <!-- Lugares -->
 <section>
   <div class="wrap reveal">
+    <div class="swan-duo"><img class="duo-swan izq" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg class="duo-star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#DCE6F3"/></svg><img class="duo-swan der" src="img/cisne-der.png" alt="" aria-hidden="true"></div>
     <p class="eyebrow">Dónde y cuándo</p>
     <h2 class="script big-script">Te espero</h2>
     <div class="places">
@@ -556,6 +568,7 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
 <!-- Galería -->
 <section>
   <div class="wrap reveal">
+    <div class="swan-duo"><img class="duo-swan izq" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg class="duo-star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#DCE6F3"/></svg><img class="duo-swan der" src="img/cisne-der.png" alt="" aria-hidden="true"></div>
     <p class="eyebrow">Galería</p>
     <h2 class="script big-script">Mis recuerdos</h2>
     <div class="gallery">
@@ -572,6 +585,7 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
 <!-- Vestimenta y regalos -->
 <section class="alt">
   <div class="wrap reveal">
+    <div class="swan-duo"><img class="duo-swan izq" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg class="duo-star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#DCE6F3"/></svg><img class="duo-swan der" src="img/cisne-der.png" alt="" aria-hidden="true"></div>
     <p class="eyebrow">Código de vestimenta</p>
     <h2 class="script big-script">Formal</h2>
     <p class="lead" style="margin-top:10px">Colores reservados para la quinceañera.<br>Te pedimos amablemente no usar:</p>
@@ -582,7 +596,7 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
       <div><i style="background:#C0C4CB"></i>Plata</div>
       <div><i style="background:#C0392B"></i>Rojo</div>
     </div>
-    <div class="divider" style="margin-top:56px"><i></i><svg class="cisnito r" aria-hidden="true"><use href="#cisnito"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L13 7 L20 10 L13 13 L10 20 L7 13 L0 10 L7 7 Z" fill="#C9CED6"/></svg><svg class="cisnito" aria-hidden="true"><use href="#cisnito"/></svg><i></i></div>
+    <div class="divider" style="margin-top:56px"><i></i><img class="duo-swan izq" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L13 7 L20 10 L13 13 L10 20 L7 13 L0 10 L7 7 Z" fill="#C9CED6"/></svg><img class="duo-swan der" src="img/cisne-der.png" alt="" aria-hidden="true"><i></i></div>
     <p class="eyebrow">Mesa de regalos</p>
     <svg viewBox="0 0 80 60" width="70" height="52" style="margin:18px auto 0;display:block" aria-hidden="true"><rect x="3" y="3" width="74" height="54" rx="6" fill="none" stroke="#C9CED6" stroke-width="3"/><path d="M3 8 L40 34 L77 8" fill="none" stroke="#C9CED6" stroke-width="3"/></svg>
     <p class="script big-script" style="font-size:clamp(50px,12vw,72px)">Lluvia de sobres</p>
@@ -601,13 +615,13 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
   <svg class="side-feather" style="right:3%;top:62%;animation-delay:-3.5s" viewBox="0 0 60 200" aria-hidden="true"><path d="M30 8 C 4 50, 6 120, 30 172 C 54 120, 56 50, 30 8 Z" fill="#DCE6F3"/><path d="M30 10 L30 196" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>
   <svg class="side-feather" style="left:5%;bottom:10%;animation-delay:-1s" viewBox="0 0 60 200" aria-hidden="true"><path d="M30 8 C 4 50, 6 120, 30 172 C 54 120, 56 50, 30 8 Z" fill="#DCE6F3"/><path d="M30 10 L30 196" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>
   <div class="wrap rsvp reveal">
-    <div class="medal-row"><svg class="cisnito r big" aria-hidden="true"><use href="#cisnito"/></svg><svg class="medal" viewBox="0 0 120 120" aria-hidden="true">
+    <div class="medal-row"><img class="duo-swan izq big" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg class="medal" viewBox="0 0 120 120" aria-hidden="true">
       <circle cx="60" cy="66" r="44" fill="rgba(20,33,61,.85)" stroke="#DCE6F3" stroke-width="2"/>
       <circle cx="60" cy="66" r="37" fill="none" stroke="#A9C6E3" stroke-width="1" stroke-dasharray="2 5"/>
       <path d="M38 26 L42 8 L51 17 L60 2 L69 17 L78 8 L82 26 Z" fill="#E9F0F9" stroke="#FFFFFF" stroke-width="1.2" stroke-linejoin="round"/>
       <circle cx="60" cy="3.5" r="3" fill="#A9C6E3"/><circle cx="46" cy="20" r="1.8" fill="#A9C6E3"/><circle cx="74" cy="20" r="1.8" fill="#A9C6E3"/>
       <text x="60" y="80" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="40" fill="#FFFFFF">XV</text>
-    </svg><svg class="cisnito big" aria-hidden="true"><use href="#cisnito"/></svg></div>
+    </svg><img class="duo-swan der big" src="img/cisne-der.png" alt="" aria-hidden="true"></div>
     <p class="rsvp-title-top lined"><span>Confirma</span></p>
     <h2 class="script rsvp-title">tu asistencia</h2>
 
@@ -655,7 +669,7 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
     <div class="arch" style="margin-top:0"><img src="img/f3.jpg" alt="Joyce Marcella sonriendo con su vestido de XV años" loading="lazy" style="object-position:center 20%"></div>
     <p class="script big-script" style="margin-top:30px">¡Te espero!</p>
     <p class="lead">Tu presencia es mi mejor regalo</p>
-    <div class="swan-pair"><svg class="cisnito r big" aria-hidden="true"><use href="#cisnito"/></svg><svg viewBox="0 0 20 20" aria-hidden="true" class="pair-star"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#C9CED6"/></svg><svg class="cisnito big" aria-hidden="true"><use href="#cisnito"/></svg></div>
+    <div class="swan-pair"><img class="duo-swan izq big" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true" class="pair-star"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#C9CED6"/></svg><img class="duo-swan der big" src="img/cisne-der.png" alt="" aria-hidden="true"></div>
     <p class="script" style="font-size:44px;color:var(--sky);margin-top:16px">Joyce Marcella</p>
   </div>
 </section>
