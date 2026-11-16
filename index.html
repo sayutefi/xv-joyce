@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no, date=no, address=no">
 <title>Mis XV Años · Joyce Marcella</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -404,6 +405,26 @@ section{position:relative;padding:88px 22px;text-align:center}
 #intro.opened .intro-content,#intro.opened .intro-top{opacity:0;translate:0 24px}
 @media (max-height:700px){.intro-photo{height:64%}#intro .swan-duo .duo-swan{width:52px}#intro .env-name{font-size:50px}.photo-btn{margin-top:14px}}
 
+/* Regalos */
+.gifts{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:22px}
+.gift-opt{width:100%;max-width:340px;box-sizing:border-box;padding:18px 18px 16px;border-radius:20px;border:1.5px solid rgba(220,230,243,.5);background:rgba(255,255,255,.05);display:flex;flex-direction:column;align-items:center;gap:6px}
+.g-ico{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#FFFFFF,#DCE6F3 45%,#A9C6E3);color:var(--navy);box-shadow:0 0 16px rgba(169,198,227,.6)}
+.g-ico svg{width:26px;height:26px}
+.g-t{font-size:23px;font-weight:600;color:#fff;line-height:1.2}
+.g-or{font-family:'Great Vibes',cursive;font-size:34px;color:var(--sky);line-height:1}
+.g-lbl{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--sky);margin-top:6px}
+.g-num{font-size:34px;font-weight:700;letter-spacing:.12em;color:#fff;line-height:1.1}
+.g-copy{display:inline-flex;align-items:center;gap:8px;margin-top:8px;min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid rgba(220,230,243,.75);background:transparent;color:#fff;font:inherit;font-size:14px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.g-copy svg{width:18px;height:18px}
+.g-copy:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.g-copy.ok{background:rgba(169,198,227,.25)}
+.g-go{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;min-height:52px;padding:0 26px;border-radius:999px;border:2px solid rgba(255,255,255,.9);background:linear-gradient(180deg,#F1F5FB 0%,#C9D8EC 60%,#AFC4E1 100%);color:var(--navy)!important;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.08em;white-space:nowrap;text-transform:uppercase;box-shadow:0 0 20px rgba(169,198,227,.6)}
+.g-go svg{width:18px;height:18px}
+.g-go:focus-visible{outline:3px solid var(--sky);outline-offset:4px}
+/* Números siempre blancos (iPhone los convierte en enlaces azules) */
+a[x-apple-data-detectors],a[href^="tel"]{color:inherit!important;text-decoration:none!important;font:inherit!important}
+.rsvp .phone,.rsvp .phone *{color:#FFFFFF!important;text-decoration:none!important}
+
 /* Final */
 .final .big-script{font-size:clamp(54px,13vw,84px)}
 footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:16px;font-style:italic}
@@ -614,8 +635,18 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
     </div>
     <div class="divider" style="margin-top:56px"><i></i><img class="duo-swan izq" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L13 7 L20 10 L13 13 L10 20 L7 13 L0 10 L7 7 Z" fill="#C9CED6"/></svg><img class="duo-swan der" src="img/cisne-der.png" alt="" aria-hidden="true"><i></i></div>
     <p class="eyebrow">Mesa de regalos</p>
-    <svg viewBox="0 0 80 60" width="70" height="52" style="margin:18px auto 0;display:block" aria-hidden="true"><rect x="3" y="3" width="74" height="54" rx="6" fill="none" stroke="#C9CED6" stroke-width="3"/><path d="M3 8 L40 34 L77 8" fill="none" stroke="#C9CED6" stroke-width="3"/></svg>
-    <p class="script big-script" style="font-size:clamp(50px,12vw,72px)">Lluvia de sobres</p>
+    <h2 class="script big-script" style="font-size:clamp(50px,13vw,72px)">Regalos</h2>
+    <div class="gifts">
+      <div class="gift-opt"><span class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><p class="g-t">Lluvia de sobres</p></div>
+      <p class="g-or">o</p>
+      <div class="gift-opt g-mesa"><span class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v2h6V3M8.5 10h7M8.5 14h7M8.5 18h4"/></svg></span>
+        <p class="g-t">Mesa de regalos Liverpool</p>
+        <p class="g-lbl">Número de evento</p>
+        <p class="g-num" id="evNum">60083613</p>
+        <a class="g-go" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60083613" target="_blank" rel="noopener">Ir a la mesa de regalos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <button type="button" class="g-copy" id="copyEv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copiar número</span></button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -779,6 +810,15 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
     if(fName.value.trim()){document.getElementById('errName').hidden=true;fName.classList.remove('bad');}
     if(form.querySelector('input[name="asiste"]:checked')){document.getElementById('errChoice').hidden=true;form.querySelector('.choice-row').classList.remove('bad');}
   });});
+
+  // Copiar número de evento
+  var cbtn=document.getElementById('copyEv');
+  if(cbtn) cbtn.addEventListener('click',function(){
+    var t=document.querySelector('#copyEv span'), num='60083613';
+    function done(ok){t.textContent=ok?'¡Copiado!':'60083613';cbtn.classList.toggle('ok',ok);setTimeout(function(){t.textContent='Copiar número';cbtn.classList.remove('ok');},2200);}
+    try{ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(num).then(function(){done(true);},function(){done(false);});return;} }catch(e){}
+    try{var ta=document.createElement('textarea');ta.value=num;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();var ok=document.execCommand('copy');document.body.removeChild(ta);done(ok);}catch(e){done(false);}
+  });
 
   // Cuenta regresiva (17:00 hora del centro de México, UTC-6)
   var target=new Date('2027-01-09T17:00:00-06:00').getTime();
