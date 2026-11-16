@@ -327,8 +327,11 @@ section{position:relative;padding:88px 22px;text-align:center}
 .send::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-20deg);animation:shine 3.8s ease-in-out infinite}
 .send:focus-visible{outline:3px solid var(--sky);outline-offset:4px}
 .f-note{text-align:center;font-size:15px;font-style:italic;color:var(--silver);margin-top:12px}
-.rsvp .deadline{margin-top:26px}
-.rsvp .phone{margin-top:10px;font-size:22px}
+.rsvp .deadline{display:inline-flex;align-items:center;gap:14px;margin-top:30px;max-width:none;padding:14px 24px;border-radius:18px;border:1.5px solid rgba(255,255,255,.85);background:linear-gradient(180deg,rgba(169,198,227,.28),rgba(169,198,227,.12));color:#FFFFFF;text-align:left;line-height:1.35;font-size:13px;letter-spacing:.18em;box-shadow:0 0 22px rgba(169,198,227,.45);animation:deadGlow 2.8s ease-in-out infinite}
+.rsvp .deadline svg{width:30px;height:30px;flex:none}
+.rsvp .deadline b{display:inline-block;margin-top:2px;font-size:22px;letter-spacing:.08em;font-weight:700;color:#FFFFFF}
+@keyframes deadGlow{0%,100%{box-shadow:0 0 14px rgba(169,198,227,.35)}50%{box-shadow:0 0 28px rgba(169,198,227,.75),0 0 0 6px rgba(169,198,227,.12)}}
+.rsvp .phone{margin-top:16px;font-size:26px;font-style:normal;font-weight:600;color:#FFFFFF;letter-spacing:.04em}
 
 /* Cisnes pequeños */
 .cisnito{width:34px;height:29px;flex:none;filter:drop-shadow(0 0 6px rgba(169,198,227,.45));animation:bob 4s ease-in-out infinite}
@@ -373,6 +376,33 @@ section{position:relative;padding:88px 22px;text-align:center}
 .swan-duo .duo-swan{width:clamp(64px,19vw,84px)}
 .duo-star{width:14px;height:14px;margin-bottom:22px;flex:none}
 .medal-row .duo-swan{margin-bottom:10px}
+
+/* Bienvenida con foto */
+#intro{justify-content:flex-end;padding:0 18px max(26px,env(safe-area-inset-bottom));background:var(--navy)}
+.intro-photo{position:absolute;left:0;right:0;top:0;height:72%;overflow:hidden}
+.intro-photo img{width:100%;height:100%;object-fit:cover;object-position:center 32%;animation:introZoom 16s ease-out both;transition:scale 1.2s ease,opacity 1s ease}
+@keyframes introZoom{from{scale:1.12}to{scale:1}}
+.intro-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,42,71,.4) 0%,rgba(27,42,71,0) 20%,rgba(27,42,71,0) 50%,rgba(27,42,71,.85) 82%,var(--navy) 100%)}
+.intro-top{position:absolute;left:0;right:0;top:max(26px,env(safe-area-inset-top));z-index:3;font-size:14px;letter-spacing:.42em;padding-left:.42em;text-transform:uppercase;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.7);animation:fadeUp 1.2s ease .3s both}
+.intro-content{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;transition:opacity .7s ease,translate .7s ease}
+.intro-content>*{animation:fadeUp 1.1s cubic-bezier(.2,.8,.2,1) both}
+.intro-content>*:nth-child(1){animation-delay:.5s}.intro-content>*:nth-child(2){animation-delay:.7s}.intro-content>*:nth-child(3){animation-delay:.9s}
+.intro-content>*:nth-child(4){animation-delay:1.1s}.intro-content>*:nth-child(5){animation-delay:1.3s}.intro-content>*:nth-child(6){animation-delay:1.5s}
+@keyframes fadeUp{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+#intro .swan-duo{margin-bottom:8px}
+#intro .swan-duo .duo-swan{width:clamp(58px,17vw,74px)}
+#intro .env-sub{margin-top:0}
+#intro .env-name{margin-top:2px;font-size:clamp(52px,15vw,70px)}
+.intro-date{font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:var(--silver);margin-top:6px;width:100%;max-width:360px}
+.intro-date span{white-space:nowrap}
+.photo-btn{position:relative;overflow:hidden;margin-top:22px;display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 30px;border-radius:999px;border:2px solid rgba(255,255,255,.9);background:linear-gradient(180deg,#F1F5FB 0%,#C9D8EC 60%,#AFC4E1 100%);color:var(--navy);font:inherit;font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;cursor:pointer;box-shadow:0 0 24px rgba(169,198,227,.7),0 0 0 7px rgba(169,198,227,.12)}
+.photo-btn svg{width:20px;height:20px}
+.photo-btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-20deg);animation:shine 3.8s ease-in-out infinite}
+.photo-btn:focus-visible{outline:3px solid var(--sky);outline-offset:5px}
+#intro .intro-content small{margin-top:14px;color:var(--silver);font-style:italic;font-size:15px}
+#intro.opened .intro-photo img{scale:1.18;opacity:.6}
+#intro.opened .intro-content,#intro.opened .intro-top{opacity:0;translate:0 24px}
+@media (max-height:700px){.intro-photo{height:64%}#intro .swan-duo .duo-swan{width:52px}#intro .env-name{font-size:50px}.photo-btn{margin-top:14px}}
 
 /* Final */
 .final .big-script{font-size:clamp(54px,13vw,84px)}
@@ -421,35 +451,21 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
 
 <!-- Pantalla de bienvenida -->
 <div id="intro" role="dialog" aria-label="Bienvenida a la invitación">
+  <div class="intro-photo"><img src="img/f6.jpg" alt="Joyce Marcella a caballo con sombrero blanco entre bugambilias"><div class="intro-shade"></div></div>
   <div class="ribbon-slot" data-pos="tl"></div>
   <div class="ribbon-slot" data-pos="br"></div>
   <div class="sparkle-slot" data-n="12"></div>
-  <p class="eyebrow">Tienes una invitación</p>
-  <h2 class="script env-name">Joyce Marcella</h2>
-  <p class="env-sub">Mis XV Años</p>
-  <div class="envelope" id="envelope">
-    <svg class="side-feather" style="left:-14px;top:-26px;rotate:-20deg" viewBox="0 0 60 200" aria-hidden="true"><path d="M30 8 C 4 50, 6 120, 30 172 C 54 120, 56 50, 30 8 Z" fill="#DCE6F3"/><path d="M30 10 L30 196" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>
-    <div class="env-body"></div>
-    <div class="env-letter" aria-hidden="true">
-      <p class="script">XV Años</p>
-      <span>Joyce Marcella</span>
-    </div>
-    <svg class="env-pocket" viewBox="0 0 340 240" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 240 L0 0 L150 165 Q170 178 190 165 L340 0 L340 240 Z" fill="#CFDCEE"/><path d="M0 240 L160 128 Q170 121 180 128 L340 240 Z" fill="#C3D3EA"/>
-      <path d="M0 240 L160 128 Q170 121 180 128 L340 240" fill="none" stroke="#A9C6E3" stroke-width="1.5"/>
-      <rect x="9" y="9" width="322" height="222" rx="6" fill="none" stroke="#7D8FAD" stroke-width="1" stroke-dasharray="3 5" opacity=".6"/>
-    </svg>
-    <div class="env-flap">
-      <svg viewBox="0 0 340 180" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M1 1 L339 1 L190 165 Q170 178 150 165 Z" fill="#EEF3F9" stroke="#A9C6E3" stroke-width="1.5" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <button id="openBtn" class="env-seal" type="button" aria-label="Abrir la invitación con música"><span class="script">XV</span></button>
-    <svg class="side-feather" style="right:-10px;bottom:-34px;rotate:25deg;animation-delay:-2s" viewBox="0 0 60 200" aria-hidden="true"><path d="M30 8 C 4 50, 6 120, 30 172 C 54 120, 56 50, 30 8 Z" fill="#DCE6F3"/><path d="M30 10 L30 196" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>
+  <svg class="side-feather" style="left:5%;bottom:22%;rotate:-25deg" viewBox="0 0 60 200" aria-hidden="true"><path d="M30 8 C 4 50, 6 120, 30 172 C 54 120, 56 50, 30 8 Z" fill="#DCE6F3"/><path d="M30 10 L30 196" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>
+  <svg class="side-feather" style="right:5%;bottom:30%;animation-delay:-2s" viewBox="0 0 60 200" aria-hidden="true"><path d="M30 8 C 4 50, 6 120, 30 172 C 54 120, 56 50, 30 8 Z" fill="#DCE6F3"/><path d="M30 10 L30 196" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></svg>
+  <p class="intro-top">Tienes una invitación</p>
+  <div class="intro-content">
+    <div class="swan-duo"><img class="duo-swan izq" src="img/cisne-izq.png" alt="" aria-hidden="true"><svg class="duo-star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="#DCE6F3"/></svg><img class="duo-swan der" src="img/cisne-der.png" alt="" aria-hidden="true"></div>
+    <p class="env-sub">Mis XV Años</p>
+    <h2 class="script env-name">Joyce Marcella</h2>
+    <p class="intro-date lined"><span>Sábado 09 · 01 · 2027</span></p>
+    <button id="openBtn" class="photo-btn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Abrir invitación</button>
+    <small>Sube el volumen: la invitación tiene música</small>
   </div>
-  <p class="tap">Toca el sello para abrir</p>
-  <svg class="hand" viewBox="0 0 24 24" fill="none" stroke="#A9C6E3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a1.5 1.5 0 0 1 3 0v5"/><path d="M12 10V8.5a1.5 1.5 0 0 1 3 0V11"/><path d="M15 10.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L4 15.5a1.5 1.5 0 0 1 2.5-1.6L9 16"/></svg>
-  <small>Sube el volumen: la invitación tiene música</small>
 </div>
 
 <button id="musicBtn" type="button" aria-label="Pausar música" hidden>
@@ -655,8 +671,8 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
       </form>
     </div>
 
-    <p class="deadline">Confirma a más tardar el 10 de diciembre</p>
-    <p class="phone lined"><span><svg viewBox="0 0 24 24" fill="none" stroke="#A9C6E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>936 122 4982</span></p>
+    <p class="deadline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Confirma a más tardar el<br><b>10 de diciembre</b></span></p>
+    <p class="phone lined"><span><svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>936 122 4982</span></p>
   </div>
 </section>
 
@@ -697,14 +713,13 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
     document.documentElement.scrollTop=0; document.body.scrollTop=0;
     play();
     intro.classList.add('opened');
-    document.getElementById('envelope').classList.add('opening');
     setTimeout(function(){
       intro.classList.add('gone');
       document.body.classList.remove('locked');
       mBtn.hidden=false;
       setTimeout(heroIn,350);
       setTimeout(function(){intro.style.display='none';},1200);
-    },2300);
+    },900);
   });
   mBtn.addEventListener('click',function(){
     if(audio.paused) play(); else {audio.pause();setState(false);}
@@ -872,7 +887,7 @@ footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:1
   var _check=check; check=function(){_check(); fillLine();};
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',onScroll);
-  openBtn.addEventListener('click',function(){setTimeout(check,2700);});
+  openBtn.addEventListener('click',function(){setTimeout(check,1300);});
 })();
 </script>
 </body>
