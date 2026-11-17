@@ -478,6 +478,11 @@ a[x-apple-data-detectors],a[href^="tel"]{color:inherit!important;text-decoration
 #intro.env-mode .env-name{animation-delay:.2s}#intro.env-mode .env-sub{animation-delay:.35s}
 #intro.opened .env-small{opacity:0;transition:opacity .6s}
 
+/* Botones "Ver mapa": fondo claro, texto e ícono negros */
+button.btn[data-map]{-webkit-appearance:none;appearance:none;background:linear-gradient(180deg,#F1F5FB 0%,#DCE6F3 100%);color:#0E1626;border:2px solid #FFFFFF;font:inherit;font-weight:700;font-size:15px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;box-shadow:0 0 16px rgba(169,198,227,.45)}
+button.btn[data-map] svg{stroke:#0E1626}
+button.btn[data-map]:hover{background:#FFFFFF;color:#000}
+
 /* Final */
 .final .big-script{font-size:clamp(54px,13vw,84px)}
 footer{padding:40px 20px 100px;text-align:center;color:var(--silver);font-size:16px;font-style:italic}
